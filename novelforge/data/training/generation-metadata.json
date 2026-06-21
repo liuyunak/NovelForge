@@ -1,0 +1,11 @@
+{
+  "total_processed": 0,
+  "total_generated": 0,
+  "total_filtered": 0,
+  "samples_by_genre": {},
+  "avg_quality_score": 0,
+  "processing_time_ms": 1,
+  "input_books": 0,
+  "input_chapters": 0,
+  "input_words": 0
+}

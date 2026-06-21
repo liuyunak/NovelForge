@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+studio/node_modules/
+
+# Build output
+dist/
+studio/dist/
+
+# Sensitive data — NEVER commit
+.env
+data/*.db
+data/*.db-*
+data/users.json
+data/ai-providers.json
+data/processed/*
+data/raw-books/*/*
+data/style-samples/*
+data/training/finetune_data.json
+workspace/
+
+# User runtime data
+.pids/
+*.log
+
+# IDE
+.vscode/settings.json
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+*.tmp

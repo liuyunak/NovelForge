@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  novelforge:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: novelforge
+    restart: unless-stopped
+    ports:
+      # Keep in sync with config.ts default (PORT=3001) and Dockerfile EXPOSE
+      - "3001:3001"
+    volumes:
+      # Persistent data directories
+      - novelforge_workspace:/app/workspace
+      - novelforge_data:/app/data
+      - novelforge_models:/app/models
+      - novelforge_config:/app/config
+    environment:
+      - NODE_ENV=production
+      # Keep in sync with config.ts default and Dockerfile EXPOSE
+      - PORT=3001
+      # Leave JWT_SECRET empty by default → app boots in Setup Mode and the
+      # Setup Wizard generates a secure secret on first run. DO NOT set a
+      # weak placeholder here: auth.ts only recognises one specific unsafe
+      # value as "unconfigured", anything else is treated as a real (weak) key.
+      - JWT_SECRET=${JWT_SECRET:-}
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY:-}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - FEATURE_COVER_GENERATION=${FEATURE_COVER_GENERATION:-false}
+      - FEATURE_AI_DETECTION=${FEATURE_AI_DETECTION:-false}
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  novelforge_workspace:
+  novelforge_data:
+  novelforge_models:
+  novelforge_config:

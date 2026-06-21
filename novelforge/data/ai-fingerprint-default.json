@@ -1,0 +1,109 @@
+{
+  "forbidden_patterns": [
+    {
+      "id": "fp_001",
+      "pattern": "不仅如此",
+      "description": "典型AI过渡词",
+      "severity": "high",
+      "replacement_suggestion": "去掉或用具体描述替代"
+    },
+    {
+      "id": "fp_002",
+      "pattern": "然而.{0,5}却",
+      "description": "AI转折句式",
+      "severity": "high",
+      "replacement_suggestion": "用"可""却"单用"
+    },
+    {
+      "id": "fp_003",
+      "pattern": "在.{2,10}的过程中",
+      "description": "AI过程描述句式",
+      "severity": "high",
+      "replacement_suggestion": "直接描述动作"
+    },
+    {
+      "id": "fp_004",
+      "pattern": "不禁.{0,5}涌起",
+      "description": "AI情感描述句式",
+      "severity": "medium",
+      "replacement_suggestion": "用具体动作表达情感"
+    },
+    {
+      "id": "fp_005",
+      "pattern": "难以言喻",
+      "description": "AI模糊描述词",
+      "severity": "medium",
+      "replacement_suggestion": "用具体形容词替代"
+    },
+    {
+      "id": "fp_006",
+      "pattern": "一股.{2,6}之情",
+      "description": "AI情感描述句式",
+      "severity": "medium",
+      "replacement_suggestion": "用动作和对话展示情感"
+    },
+    {
+      "id": "fp_007",
+      "pattern": "竟然.{0,10}竟然",
+      "description": "AI重复强调句式",
+      "severity": "high",
+      "replacement_suggestion": "只用一次，或换其他表达"
+    },
+    {
+      "id": "fp_008",
+      "pattern": "与此同时",
+      "description": "AI过渡词",
+      "severity": "medium",
+      "replacement_suggestion": "用场景切换或直接叙述"
+    }
+  ],
+  "sentence_templates": [
+    {
+      "id": "st_001",
+      "template": "他的眼中闪过一丝{emotion}",
+      "category": "emotion",
+      "examples": ["他的眼中闪过一丝惊讶", "他的眼中闪过一丝愤怒"]
+    },
+    {
+      "id": "st_002",
+      "template": "心中不由得{verb}",
+      "category": "emotion",
+      "examples": ["心中不由得一紧", "心中不由得泛起涟漪"]
+    }
+  ],
+  "paragraph_patterns": [
+    {
+      "id": "pp_001",
+      "pattern": "连续3句以上形容词+名词结构",
+      "description": "描写过于堆砌",
+      "detection_method": "statistical"
+    }
+  ],
+  "dialogue_rules": [
+    {
+      "id": "dr_001",
+      "rule": "禁止使用"你说的对"",
+      "examples": ["你说的对", "你说得对"],
+      "severity": "medium"
+    },
+    {
+      "id": "dr_002",
+      "rule": "禁止使用"我明白了"",
+      "examples": ["我明白了", "我懂了"],
+      "severity": "low"
+    },
+    {
+      "id": "dr_003",
+      "rule": "禁止使用"这怎么可能"",
+      "examples": ["这怎么可能", "怎么可能"],
+      "severity": "medium"
+    },
+    {
+      "id": "dr_004",
+      "rule": "减少"说道"的使用",
+      "examples": ["他说道", "她说道"],
+      "severity": "low"
+    }
+  ],
+  "last_updated": "2026-06-13T00:00:00Z"
+}

@@ -1,0 +1,26 @@
+{
+  "name": "玄幻修仙",
+  "description": "经典玄幻修仙题材模板",
+  "world_rules": [
+    "灵气浓度决定修炼速度",
+    "每个大境界突破需要特定丹药或机缘",
+    "越级战斗须满足3个合理条件",
+    "宗门势力划分明确",
+    "天材地宝有固定产出地"
+  ],
+  "realm_hierarchy": [
+    { "name": "练气", "level": 1, "description": "修炼入门" },
+    { "name": "筑基", "level": 2, "description": "筑造根基" },
+    { "name": "金丹", "level": 3, "description": "凝结金丹" },
+    { "name": "元婴", "level": 4, "description": "元婴出窍" },
+    { "name": "化神", "level": 5, "description": "化凡为神" }
+  ],
+  "satisfaction_points": ["越级战斗", "获得宝物", "突破境界", "打脸反派", "美女倾心"],
+  "typical_arcs": ["入门", "历练", "突破", "大战", "飞升"],
+  "writing_tips": [
+    "战斗场景要有画面感",
+    "突破要有铺垫和仪式感",
+    "反派要有压迫感",
+    "金手指要有代价和限制"
+  ]
+}
